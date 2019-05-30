@@ -972,7 +972,4 @@ int main()
 		read(0, b, 1);
 		printf("\n");
 	}
-
-	ft_printf("%.u, %.0u\n", 0, 0);
-	printf("%.u, %.0u\n", 0, 0);
 }
