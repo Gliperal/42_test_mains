@@ -1,0 +1,205 @@
+./ft_ssl
+
+./ft_ssl file
+
+./ft_ssl -p
+
+echo -ne "" | ./ft_ssl md5
+echo -ne "" | md5
+
+echo -ne "" | ./ft_ssl md5 -p
+echo -ne "" | md5 -p
+
+echo -ne "" | ./ft_ssl md5 -a
+echo -ne "" | md5 -a
+
+echo -ne "" | ./ft_ssl md5 -q
+echo -ne "" | md5 -q
+
+echo -ne "" | ./ft_ssl md5 -r
+echo -ne "" | md5 -r
+
+echo -ne "" | ./ft_ssl md5 -s
+echo -ne "" | md5 -s
+
+echo -ne "" | ./ft_ssl md5 -s ""
+echo -ne "" | md5 -s ""
+
+echo "foo" | ./ft_ssl md5 -p -q
+echo "foo" | md5 -p -q
+
+echo "foo" | ./ft_ssl md5 -q -p
+echo "foo" | md5 -q -p
+
+echo "foo" | ./ft_ssl md5 -p -r
+echo "foo" | md5 -p -r
+
+echo "foo" | ./ft_ssl md5 -r -p
+echo "foo" | md5 -r -p
+
+echo "foo" | ./ft_ssl md5 -p -p
+echo "foo" | md5 -p -p
+
+echo "foo" | ./ft_ssl md5 -q -q
+echo "foo" | md5 -q -q
+
+echo "bar" | ./ft_ssl md5 -q -r
+echo "bar" | md5 -q -r
+
+echo "bar" | ./ft_ssl md5 -r -q
+echo "bar" | md5 -r -q
+
+echo "bar" | ./ft_ssl md5 -r -r
+echo "bar" | md5 -r -r
+
+echo "baz" | ./ft_ssl md5 -pqr
+echo "baz" | md5 -pqr
+
+echo "baz" | ./ft_ssl md5 -rqp
+echo "baz" | md5 -rqp
+
+echo "baz" | ./ft_ssl md5 -p -s
+echo "baz" | md5 -p -s
+
+echo "baz" | ./ft_ssl md5 -s -p
+echo "baz" | md5 -s -p
+
+echo "xyzzy" | ./ft_ssl md5 -s "barfoo" -r
+echo "xyzzy" | md5 -s "barfoo" -r
+
+echo "xyzzy" | ./ft_ssl md5 -s "barfoo" -p
+echo "xyzzy" | md5 -s "barfoo" -p
+
+echo "xyzzy" | ./ft_ssl md5 -s "barfoo" -p -r
+echo "xyzzy" | md5 -s "barfoo" -p -r
+
+echo "xyzzy" | ./ft_ssl md5 -s -p "barfoo" -r
+echo "xyzzy" | md5 -s -p "barfoo" -r
+
+echo "xyzzy" | ./ft_ssl md5 -p -s "barfoo" -r
+echo "xyzzy" | md5 -p -s "barfoo" -r
+
+echo "quux" | ./ft_ssl md5 -sfoo
+echo "quux" | md5 -sfoo
+
+echo "quux" | ./ft_ssl md5 -s -sfoo
+echo "quux" | md5 -s -sfoo
+
+echo "quux" | ./ft_ssl md5 -s -s
+echo "quux" | md5 -s -s
+
+echo "quux" | ./ft_ssl md5 -s -s -sfoo -s "foo" -s -p -s
+echo "quux" | md5 -s -s -sfoo -s "foo" -s -p -s
+
+echo "quux" | ./ft_ssl md5 -s foo -r -s -s -q -s foo
+echo "quux" | md5 -s foo -r -s -s -q -s foo
+
+echo file > file
+
+./ft_ssl md5 file
+md5 file
+
+./ft_ssl md5 file file
+md5 file file
+
+cat file | ./ft_ssl md5 -p file
+cat file | md5 -p file
+
+echo "42" | ./ft_ssl md5 -p file -r
+echo "42" | md5 -p file -r
+
+echo "42" | ./ft_ssl md5 -r file -p
+echo "42" | md5 -r file -p
+
+./ft_ssl md5 -q file
+md5 -q file
+
+./ft_ssl md5 -r file
+md5 -r file
+
+./ft_ssl md5 -s file
+md5 -s file
+
+./ft_ssl md5 file -p
+md5 file -p
+
+./ft_ssl md5 file -q
+md5 file -q
+
+./ft_ssl md5 file -r
+md5 file -r
+
+./ft_ssl md5 file -s
+md5 file -s
+
+./ft_ssl md5 file -p file
+md5 file -p file
+
+./ft_ssl md5 nonexistent_file
+md5 nonexistent_file
+
+touch protected_file
+chmod 0 protected_file
+./ft_ssl md5 protected_file
+md5 protected_file
+
+echo "zaphod" | ./ft_ssl md5 -p -r -p -q -p file
+echo "zaphod" | md5 -p -r -p -q -p file
+
+echo "zaphod" | ./ft_ssl md5 -psq -rsqp -pqrs file
+echo "zaphod" | md5 -psq -rsqp -pqrs file
+
+echo "zaphod" | ./ft_ssl md5 -ps file -r file -q file
+echo "zaphod" | md5 -ps file -r file -q file
+
+echo "zaphod" | ./ft_ssl md5 -s ft_ssl -pr -s md5 -q -rsa -rqp ft_ssl -s md5 -r protected_file
+echo "zaphod" | md5 -s ft_ssl -pr -s md5 -q -rsa -rqp ft_ssl -s md5 -r protected_file
+
+echo -ne "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" | ./ft_ssl md5
+echo -ne "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" | md5
+
+echo -ne "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" | ./ft_ssl md5
+echo -ne "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" | md5
+
+echo -ne "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC" | ./ft_ssl md5
+echo -ne "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC" | md5
+
+echo -ne "DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD" | ./ft_ssl md5
+echo -ne "DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD" | md5
+
+echo -ne "JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ" | ./ft_ssl md5
+echo -ne "JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ" | md5
+
+echo -ne "KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK" | ./ft_ssl md5
+echo -ne "KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK" | md5
+
+echo -ne "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL" | ./ft_ssl md5
+echo -ne "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL" | md5
+
+echo -ne "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM" | ./ft_ssl md5
+echo -ne "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM" | md5
+
+echo -ne "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" | ./ft_ssl sha256
+echo -ne "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA" | openssl sha256
+
+echo -ne "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" | ./ft_ssl sha256
+echo -ne "BBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBBB" | openssl sha256
+
+echo -ne "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC" | ./ft_ssl sha256
+echo -ne "CCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCCC" | openssl sha256
+
+echo -ne "DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD" | ./ft_ssl sha256
+echo -ne "DDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDDD" | openssl sha256
+
+echo -ne "JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ" | ./ft_ssl sha256
+echo -ne "JJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJJ" | openssl sha256
+
+echo -ne "KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK" | ./ft_ssl sha256
+echo -ne "KKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKKK" | openssl sha256
+
+echo -ne "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL" | ./ft_ssl sha256
+echo -ne "LLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLLL" | openssl sha256
+
+echo -ne "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM" | ./ft_ssl sha256
+echo -ne "MMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMMM" | openssl sha256
+
