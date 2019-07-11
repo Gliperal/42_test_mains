@@ -250,26 +250,26 @@ void floats()
 	ft_printf("%f\n", double_max);
 	printf("%f\n", double_max);
 	double double_min = make_double(0x0010000000000000);
-	ft_printf("%.1050F\n", double_min);
-	printf("%.1050F\n", double_min);
+	ft_printf("%.1050f\n", double_min);
+	printf("%.1050f\n", double_min);
 	double positive_zero = make_double(0x0000000000000000);
 	ft_printf("%f\n", positive_zero);
 	printf("%f\n", positive_zero);
 	double negative_zero = make_double(0x8000000000000000);
-	ft_printf("%F\n", negative_zero);
-	printf("%F\n", negative_zero);
+	ft_printf("%f\n", negative_zero);
+	printf("%f\n", negative_zero);
 	double subnormal_min = make_double(0x8000000000000001);
 	ft_printf("%.1100f\n", subnormal_min);
 	printf("%.1100f\n", subnormal_min);
 	double subnormal_max = make_double(0x0001111111111111);
-	ft_printf("%.1100F\n", subnormal_max);
-	printf("%.1100F\n", subnormal_max);
+	ft_printf("%.1100f\n", subnormal_max);
+	printf("%.1100f\n", subnormal_max);
 	double positive_inf = make_double(0x7ff0000000000000);
 	ft_printf("%f\n", positive_inf);
 	printf("%f\n", positive_inf);
 	double negative_inf = make_double(0xfff0000000000000);
-	ft_printf("%F\n", negative_inf);
-	printf("%F\n", negative_inf);
+	ft_printf("%f\n", negative_inf);
+	printf("%f\n", negative_inf);
 	double nan = make_double(0xffffffffffffffff);
 	ft_printf("%f\n", nan);
 	printf("%f\n", nan);
@@ -278,33 +278,33 @@ void floats()
 	ft_printf("%Lf\n", longdouble_max);
 	printf("%Lf\n", longdouble_max);
 	long double longdouble_min = make_longdouble(0x0000000000000001, 0x8000000000000001);
-	ft_printf("%.17000LF\n", longdouble_min);
-	printf("%.17000LF\n", longdouble_min);
+	ft_printf("%.17000Lf\n", longdouble_min);
+	printf("%.17000Lf\n", longdouble_min);
 	long double pseudodenormal_min = make_longdouble(0x0000000000000000, 0x8000000000000001);
 	ft_printf("%.17000Lf\n", pseudodenormal_min);
 	printf("%.17000Lf\n", pseudodenormal_min);
 	long double denormal_min = make_longdouble(0x0000000000008000, 0x0000000000000001);
-	ft_printf("%.17000LF\n", denormal_min);
-	printf("%.17000LF\n", denormal_min);
+	ft_printf("%.17000Lf\n", denormal_min);
+	printf("%.17000Lf\n", denormal_min);
 	long double positive_longzero = make_longdouble(0x0000000000000000, 0x0000000000000000);
 	ft_printf("%Lf\n", positive_longzero);
 	printf("%Lf\n", positive_longzero);
 	long double negative_longzero = make_longdouble(0x0000000000008000, 0x0000000000000000);
-	ft_printf("%LF\n", negative_longzero);
-	printf("%LF\n", negative_longzero);
+	ft_printf("%Lf\n", negative_longzero);
+	printf("%Lf\n", negative_longzero);
 }
 
 void floats_part2()
 {
 	long double pos_pseudo_inf = make_longdouble(0x0000000000007fff, 0x0000000000000000);
-	ft_printf("%LF\n", pos_pseudo_inf);
-	printf("%LF\n", pos_pseudo_inf);
+	ft_printf("%Lf\n", pos_pseudo_inf);
+	printf("%Lf\n", pos_pseudo_inf);
 	long double neg_pseudo_inf = make_longdouble(0x000000000000ffff, 0x0000000000000000);
 	ft_printf("%Lf\n", neg_pseudo_inf);
 	printf("%Lf\n", neg_pseudo_inf);
 	long double pos_long_inf = make_longdouble(0x0000000000007fff, 0x8000000000000000);
-	ft_printf("%LF\n", pos_long_inf);
-	printf("%LF\n", pos_long_inf);
+	ft_printf("%Lf\n", pos_long_inf);
+	printf("%Lf\n", pos_long_inf);
 	long double neg_long_inf = make_longdouble(0x000000000000ffff, 0x8000000000000000);
 	ft_printf("%Lf\n", neg_long_inf);
 	printf("%Lf\n", neg_long_inf);
@@ -313,27 +313,27 @@ void floats_part2()
 	ft_printf("%Lf\n", longnan1);
 	printf("%Lf\n", longnan1);
 	long double longnan2 = make_longdouble(0x0000000000007fff, 0x4000000000000000);
-	ft_printf("%LF\n", longnan2);
-	printf("%LF\n", longnan2);
+	ft_printf("%Lf\n", longnan2);
+	printf("%Lf\n", longnan2);
 	long double longnan3 = make_longdouble(0x0000000000007fff, 0x7fffffffffffffff);
 	ft_printf("%Lf\n", longnan3);
 	printf("%Lf\n", longnan3);
 	long double longnan4 = make_longdouble(0x0000000000007fff, 0x8000000000000001);
-	ft_printf("%LF\n", longnan4);
-	printf("%LF\n", longnan4);
+	ft_printf("%Lf\n", longnan4);
+	printf("%Lf\n", longnan4);
 	long double longnan5 = make_longdouble(0x0000000000007fff, 0xc000000000000000);
 	ft_printf("%Lf\n", longnan5);
 	printf("%Lf\n", longnan5);
 	long double longnan6 = make_longdouble(0x0000000000007fff, 0xc000000000000001);
-	ft_printf("%LF\n", longnan6);
-	printf("%LF\n", longnan6);
+	ft_printf("%Lf\n", longnan6);
+	printf("%Lf\n", longnan6);
 
-	ft_printf("%F\n", .42);
-	printf("%F\n", .42);
+	ft_printf("%f\n", .42);
+	printf("%f\n", .42);
 	ft_printf("%f\n", 41.9999999);
 	printf("%f\n", 41.9999999);
-	ft_printf("%.F\n", 99.99);
-	printf("%.F\n", 99.99);
+	ft_printf("%.f\n", 99.99);
+	printf("%.f\n", 99.99);
 	ft_printf("%.1f\n", 0.05);
 	printf("%.1f\n", 0.05);
 }
@@ -520,28 +520,28 @@ void floats_f()
 {
 	ft_printf("[%10f]\n", .42);
 	printf("[%10f]\n", .42);
-	ft_printf("[%10.F]\n", 42.0);
-	printf("[%10.F]\n", 42.0);
+	ft_printf("[%10.f]\n", 42.0);
+	printf("[%10.f]\n", 42.0);
 	ft_printf("[%#10.f]\n", 42.0);
 	printf("[%#10.f]\n", 42.0);
-	ft_printf("[%+20F]\n", 42.42);
-	printf("[%+20F]\n", 42.42);
+	ft_printf("[%+20f]\n", 42.42);
+	printf("[%+20f]\n", 42.42);
 	ft_printf("[%+20f]\n", -42.42);
 	printf("[%+20f]\n", -42.42);
-	ft_printf("[%+20F]\n", 0.0);
-	printf("[%+20F]\n", 0.0);
+	ft_printf("[%+20f]\n", 0.0);
+	printf("[%+20f]\n", 0.0);
 	ft_printf("[% 20f]\n", 42.42);
 	printf("[% 20f]\n", 42.42);
-	ft_printf("[% 20F]\n", -42.42);
-	printf("[% 20F]\n", -42.42);
+	ft_printf("[% 20f]\n", -42.42);
+	printf("[% 20f]\n", -42.42);
 	ft_printf("[% 20f]\n", 0.0);
 	printf("[% 20f]\n", 0.0);
-	ft_printf("[%-20F]\n", 42.42);
-	printf("[%-20F]\n", 42.42);
 	ft_printf("[%-20f]\n", 42.42);
 	printf("[%-20f]\n", 42.42);
-	ft_printf("[%+020F]\n", 42.42);
-	printf("[%+020F]\n", 42.42);
+	ft_printf("[%-20f]\n", 42.42);
+	printf("[%-20f]\n", 42.42);
+	ft_printf("[%+020f]\n", 42.42);
+	printf("[%+020f]\n", 42.42);
 	ft_printf("[%020f]\n", 42.42);
 	printf("[%020f]\n", 42.42);
 
@@ -761,12 +761,12 @@ void precision()
 
 	ft_printf("%#.f\n", 42.0);
 	printf("%#.f\n", 42.0);
-	ft_printf("%#.1F\n", 42.0);
-	printf("%#.1F\n", 42.0);
+	ft_printf("%#.1f\n", 42.0);
+	printf("%#.1f\n", 42.0);
 	ft_printf("%#.3f\n", 42.0);
 	printf("%#.3f\n", 42.0);
-	ft_printf("%#.8F\n", 42.0);
-	printf("%#.8F\n", 42.0);
+	ft_printf("%#.8f\n", 42.0);
+	printf("%#.8f\n", 42.0);
 }
 
 
@@ -904,7 +904,7 @@ void return_value()
 
 
 /* strPrintf tests */
-
+/*
 void strprintf()
 {
 	char *str = "42";
@@ -919,6 +919,7 @@ void strprintf()
 	free(x);
 	printf("%f\n", double_max);
 }
+*/
 
 
 typedef void	(*t_group)(void);
@@ -952,16 +953,15 @@ static const t_group g_test_groups[] =
 	/* 24 */	&more_floats,
 	/* 25 */	&non_printable,
 	/* 26 */	&return_value,
-	/* 27 */	&strprintf
+	//* 27 */	&strprintf
 };
 
 int main()
 {
 	char b[1];
-//	int tests[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 26, -1};
-//	int tests[] = {23, 24, 25, 27, -1};
-//	int tests[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, -1};
-	int tests[] = {-1};
+	int tests[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 26, -1};
+//	int tests[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, -1};
+//	int tests[] = {-1};
 
 	for (int i = 0; tests[i] != -1; i++)
 	{
